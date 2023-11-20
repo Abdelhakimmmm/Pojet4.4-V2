@@ -2,18 +2,27 @@
 <html>
     <head>
         <meta charset="UTF-8">
-        <title>{% block title %}Welcome!{% endblock %}</title>
-        {# Run `composer require symfony/webpack-encore-bundle`
-           and uncomment the following Encore helpers to start using Symfony UX #}
-        {% block stylesheets %}
-            {#{{ encore_entry_link_tags('app') }}#}
-        {% endblock %}
+        <title>{% block title %}Accueil{% endblock %}</title>
+        <meta name= "viewport" content="width=device-width,initial-scale=1.0">
 
-        {% block javascripts %}
-            {#{{ encore_entry_script_tags('app') }}#}
+        {% block stylesheets %}
         {% endblock %}
+            <link rel="shortcut icon" href="{{ asset('assets/images/favicon.png')}} " type="">
+            <link rel="stylesheet" href="{{ asset('assets/css/style.css') }}">
+            <link rel="stylesheet" href="{{ asset('assets/css/bootstrap.css') }}">
+            <link rel="stylesheet" href="{{ asset('assets/css/responsive.css') }}">
+            <link rel="stylesheet" href="{{ asset('assets/css/style.scss') }}">
+            <link rel="stylesheet" href="{{ asset('assets/css/style.css.map') }}">
+            <link rel="stylesheet" href="{{ asset('assets/css/font-awesome.min.css') }}">
     </head>
     <body>
+        
+        {% include "_partials/navbar.html.twig" %}
         {% block body %}{% endblock %}
+        {% include "_partials/footer.html.twig" %}
+            <link rel="stylesheet" href="{{ asset('assets/js/bootstrap.js') }}">
+            <link rel="stylesheet" href="{{ asset('assets/js/custom.js') }}">
+            <link rel="stylesheet" href="{{ asset('assets/js/jquery-3.4.1.min.js') }}">
     </body>
+
 </html>
